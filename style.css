@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+body {
+  background-color: #1e1e1e;
+}
+
+main {
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  box-sizing: border-box;
+  background: #121212;
+  top: 0;
+  bottom: 0;
+  width: 350px;
+  padding: 32px 12px;
+}
+
+.sidebar img {
+  margin-right: 20px;
+}
+
+.sidebar .brand {
+  font-size: 24px;
+  font-weight: 800;
+  color: #57acdc;
+}
+
+.sidebar .btn {
+  color: #fff;
+  background-color: #57acdc;
+  padding: 15px 32px;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  margin: 20px 30px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: block;
+  padding: 16px 28px;
+  color: #939393;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: margin 0.4s;
+}
+
+.sidebar .content {
+  margin-top: 20px;
+}
+
+.sidebar .content a:hover {
+  color: #57acdc;
+  margin-left: 8px;
+}
+
+.card {
+  position: relative;
+  padding: 1rem;
+  width: 170px;
+  height: 200px;
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+  margin-left: 1.5rem;
+}
+
+.progressbar {
+  --percentage: var(--value);
+  --primary: #57acdc;
+  --secondary: #121212;
+  --size: 150px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.progressbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    var(--primary) calc(var(--percentage) * 1%),
+    var(--secondary) 0
+  );
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+}
+
+.progressbar::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
+.card p {
+  margin-top: 15px;
+  color: #939393;
+}
+
+.home {
+  margin: 30px;
+  width: 100%;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr;
+  align-items: center;
+  grid-gap: 1rem;
+}
+.search_file {
+  position: relative;
+}
+.searchInput {
+  position: relative;
+  background-color: transparent;
+  width: 625px;
+  height: 52px;
+  border-radius: 10px;
+  padding: 0.5rem 3rem;
+  color: #fff;
+  border: 1px solid #939393;
+}
+
+.searchImg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0.5rem;
+}
+.searchImg2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0.5rem;
+}
+
+.file-drop-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 350px;
+  max-width: 100%;
+  padding: 0 2rem;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  transition: 0.2s;
+}
+.file-drop-area.is-active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.file-msg {
+  font-size: small;
+  font-weight: 300;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 1rem;
+  color: #939393;
+}
+
+.file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.file-msg a {
+  color: #57acdc;
+}
+
+.file-input:focus {
+  outline: none;
+}
+header h3 {
+  color: #fafafa;
+}
+
+header p {
+  color: #939393;
+}
+
+header .text-style {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  margin: 5px 0px 5px 0px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+  color: #fafafa;
+  align-items: center;
+}
+
+th {
+  background-color: #171717;
+}
+
+tr:nth-child(even) {
+  background-color: #8b8b8b0f;
+}
+
+table input {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px;
+  margin-right: 20px;
+}
+table input[type="checkbox"] {
+  accent-color: #8b8b8b0f;
+}
+table td .name {
+  display: flex;
+  align-items: center;
+}
+
+table td .name img {
+  margin-inline-end: 0.5rem;
+}
+[dir="rtl"] {
+  table td .name img {
+    margin-inline-start: 0.5rem;
+  }
+}
